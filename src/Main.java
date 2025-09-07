@@ -25,8 +25,9 @@ int currentYear = LocalDate.now().getYear();
 В результате программа должна выводить в консоль сообщение, какую версию приложения (обычную или облегченную)
 и для какой ОС (Android или iOS) установить пользователю.*/
         System.out.println("Task 2");
-        os("android", 2023);
+        os(1, 2023);
         System.out.println();
+
         /*Задача 3
 Возвращаемся к задаче на расчет дней доставки банковской карты. Ваша задача — доработать код, а именно написать метод,
 который на вход принимает дистанцию и возвращает итоговое количество дней доставки.
@@ -53,14 +54,15 @@ deliveryDistance = 95, которая содержит дистанцию до �
         }
     }
     //Задача 2
-    public static void os(String usOS, int yearDev) {
+
+    public static void os(int usOS, int yearDev) {
         int currentYear = LocalDate.now().getYear();
-        String iOS = "iOS";
-        String android = "android";
-        boolean androidOld = usOS == android && yearDev < currentYear;
-        boolean androidNew = usOS == android && yearDev >= currentYear;
-        boolean iOSOld = usOS == iOS && yearDev < currentYear;
-        boolean iOSNew = usOS == iOS && yearDev >= currentYear;
+        int iOS = 0;
+        int android = 1;
+        boolean androidOld = usOS == 1 && yearDev < currentYear;
+        boolean androidNew = usOS == 1 && yearDev >= currentYear;
+        boolean iOSOld = usOS == 0 && yearDev < currentYear;
+        boolean iOSNew = usOS == 0 && yearDev >= currentYear;
         if (androidOld) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке: ");
         } else if (androidNew) {
@@ -73,6 +75,7 @@ deliveryDistance = 95, которая содержит дистанцию до �
 
     }
     //Задача 3
+
     public static void delivery(int distance) {
         int deliveryDays = 1;
         if (distance <= 20) {
